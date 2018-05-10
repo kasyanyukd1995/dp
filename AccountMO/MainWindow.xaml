@@ -1,0 +1,88 @@
+﻿<Window x:Class="AccountMO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountMO"
+        mc:Ignorable="d"
+        Title="Учет материальных средств" FontFamily="Arial" FontSize="14" Width="954" Height="601.5">
+    
+
+
+    <Grid ShowGridLines="False" >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FF060C1F"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="657*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="473*"/>
+            <RowDefinition Height="54*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="9"></DataGrid>
+        <Button Grid.Column="1" Grid.Row="1" Click="AddPage">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Add-New.ico"/>
+            </Button.Background>
+
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="1" Click="AddPage">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Data-Edit.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="1" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Delete.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="1" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Command-Refresh.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="1" Click="ClickFiltr">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Filter - 03.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="1" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Print.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="1" >
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/TTH.ico"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="8" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Gear-02-WF.ico"/>
+            </Button.Background>
+        </Button>
+        
+
+
+    </Grid>
+
+</Window>
+    

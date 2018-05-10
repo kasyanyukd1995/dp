@@ -1,0 +1,35 @@
+﻿<Window x:Class="AccountMO.AddServicemen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountMO"
+        mc:Ignorable="d"
+        Title="AddServicemen" Height="200.233" Width="484.116">
+    <Grid Background="Azure">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="45*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Height="18" Text="Военнослужащий"/>
+            <TextBlock Height="18" Text="Дата закрепления"></TextBlock>
+            <TextBlock Height="18" Text="Дата открепления"></TextBlock>
+            <TextBlock Height="61" ><Run Text="Дополнительная"/><Run/><LineBreak/><Run Text="информация"/></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <ComboBox Height="18"></ComboBox>
+            <DatePicker Width="90" HorizontalAlignment="Left" Height="18"></DatePicker>
+            <DatePicker Width="90" HorizontalAlignment="Left" Height="18"></DatePicker>
+            <TextBox  Height="58"></TextBox>
+            <Button Height="38" Margin="106,5,130,10">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Save-01.ico"/>
+                </Button.Background>
+
+            </Button>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

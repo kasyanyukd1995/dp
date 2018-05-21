@@ -26,7 +26,7 @@ namespace DomainLib.Concrete
         {
             return context.Services.Where(x=>x.NameService==service).First().Instruments;
         }
-
+        
     }
 }
 

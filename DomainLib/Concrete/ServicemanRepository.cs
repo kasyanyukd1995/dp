@@ -17,5 +17,44 @@ namespace DomainLib.Concrete
                 return context.Servicemans;
             }
         }
+        public IEnumerable<string> GetNamesServices() //список служб
+        {
+            return context.Services.Select(x => x.NameService);
+        }
+        public ICollection<Instrument> GetInstrumentsService(string service)
+        {
+            return context.Services.Where(x => x.NameService == service).First().Instruments;
+        }
+
+        public void SavServiceman(Serviceman serviceman)
+        {
+            if (serviceman.Id == 0)
+            {
+                context.Servicemans.Add(serviceman);
+            }
+            else
+            {
+                var dbEntry = context.Servicemans.Find(serviceman.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Instruments = serviceman.Instruments;
+                    dbEntry.Name = serviceman.Name;
+                    dbEntry.Status = serviceman.Status;
+                    dbEntry.Surname = serviceman.Surname;
+                }
+            }
+            context.SaveChanges();
+        }
+
+        public Serviceman DeleteServiceman(int id)
+        {
+            var dbEntry = context.Servicemans.Find(id);
+            if (dbEntry != null)
+            {
+                context.Servicemans.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

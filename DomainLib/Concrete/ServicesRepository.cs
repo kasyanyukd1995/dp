@@ -26,6 +26,35 @@ namespace DomainLib.Concrete
         {
             return context.Services.Where(x=>x.NameService==service).First().Instruments;
         }
+
+        public void SaveService(Service service)
+        {
+            if(service.Id==0)
+            {
+                context.Services.Add(service);
+            }
+            else
+            {
+               var dbEntry = context.Services.Find(service.Id);
+                if(dbEntry!=null)
+                {
+                    dbEntry.Instruments = service.Instruments;
+                    dbEntry.NameService = service.NameService;
+                }
+            }
+            context.SaveChanges();
+        }
+
+        public Service DeleteService(int id)
+        {
+            var dbEntry = context.Services.Find(id);
+            if(dbEntry!=null)
+            {
+                context.Services.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
         
     }
 }

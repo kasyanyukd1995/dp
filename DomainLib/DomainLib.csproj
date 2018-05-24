@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201804051916208_rename s.Designer.cs">
       <DependentUpon>201804051916208_rename s.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805152007335_newmirgaton.cs" />
+    <Compile Include="Migrations\201805152007335_newmirgaton.Designer.cs">
+      <DependentUpon>201805152007335_newmirgaton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805152015036_newmirgaton1.cs" />
+    <Compile Include="Migrations\201805152015036_newmirgaton1.Designer.cs">
+      <DependentUpon>201805152015036_newmirgaton1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +87,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804051916208_rename s.resx">
       <DependentUpon>201804051916208_rename s.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805152007335_newmirgaton.resx">
+      <DependentUpon>201805152007335_newmirgaton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805152015036_newmirgaton1.resx">
+      <DependentUpon>201805152015036_newmirgaton1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

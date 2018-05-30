@@ -12,9 +12,7 @@ namespace DomainLib.Entity
         public Service Service { get; set; }
         public string NameInstrument { get; set; }
         public string Description { get; set; }//описание
-        
         public string YearIssue { get; set; } //год выпуска
-        
         public string Characteristic { get; set; }
       
     }

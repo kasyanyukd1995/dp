@@ -45,19 +45,34 @@ namespace AccountMO
             public string AddirInf { get; set; }
 
         }
+        public ForVieWonMain ConvertAccountToForVieWonMain(Account account)
+        {
+            return new ForVieWonMain()
+            {
+             Id = account.Id,
+             ServiceName = account.Service.NameService, 
+             InstrumentName = account.Instrument.NameInstrument, 
+             DateOn = account.AccountingDate,
+             DateOf = account.Date_ofderegistration, 
+             AddirInf = account.AddirionalInf, 
+             Condition = account.Condition,
+             DecisionOprt = account.DecisionOprtn, 
+             Inventory = account.InventoryNumber, 
+             Serial = account.SerialNumber 
+            };
+        }
         //--------------------------------------------------------
 
 
-        Context contextv;
+        AccountsRepository acountRepository = new AccountsRepository();
 
         public MainWindow()
         {
             InitializeComponent();
             Context contextv;
-            contextv = new Context();
-            contextv.Accounts.Load();
+            
             //загрузка в datagrid
-            Account account = new Account();
+       
         
 
             dataGridAccount.ItemsSource = contextv.Accounts.Local.ToBindingList();
@@ -68,8 +83,10 @@ namespace AccountMO
                 new ForVieWonMain { Id = account.Id, ServiceName = account.Service.NameService, InstrumentName = account.Instrument.NameInstrument, DateOn = account.AccountingDate, DateOf = account.Date_ofderegistration, AddirInf = account.AddirionalInf, Condition = account.Condition, DecisionOprt = account.DecisionOprtn, Inventory = account.InventoryNumber, Serial = account.SerialNumber }
 
             };
+             */
+            var forVies=acountRepository.Acounts.Select(x=>ConvertAccountToForVieWonMain(x));
             dataGridAccount.ItemsSource=forVies;
-            */
+           
 
 
         }

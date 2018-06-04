@@ -1,12 +1,13 @@
-﻿<Window x:Class="AccountMO.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountMO"
+        xmlns:Concrete="clr-namespace:DomainLib.Concrete;assembly=DomainLib" x:Class="AccountMO.MainWindow"
         mc:Ignorable="d"
         Title="Учет материальных средств" FontFamily="Arial" FontSize="14" Width="954" Height="601.5">
-    
+
 
 
     <Grid ShowGridLines="False" >
@@ -29,14 +30,32 @@
             <ColumnDefinition Width="657*"/>
             <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="36*"/>
             <RowDefinition Height="473*"/>
             <RowDefinition Height="54*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="9"></DataGrid>
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="10"  x:Name="dataGridAccount" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" UseLayoutRounding="True" Margin="-3,0,10,0">
+            <!-- столбцы
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="№ п/п" Width="100"/>
+                <DataGridTextColumn Binding="{Binding NameService}" Header="Служба" Width="110"/>
+                <DataGridTextColumn Binding="{Binding NameInstrument}" Header="Тип средства" Width="120"/>
+                <DataGridTextColumn Binding="{Binding AccountingDate}" Header="Дата постановки на учет" Width="170"/>
+                <DataGridTextColumn Binding="{Binding Date_ofderegistration}" Header="Дата снятия с учета" Width="150"/>
+                <DataGridTextColumn Binding="{Binding DecisionOprtn}" Header="Решение на эксплуатацию" Width="200"/>
+                <DataGridTextColumn Binding="{Binding AddirionalInf}" Header="Дополнительная информация" Width="120"/>
+                <DataGridTextColumn Binding="{Binding InventoryNumber}" Header="Инвентарный номер" Width="120"/>
+                <DataGridTextColumn Binding="{Binding SerialNumber}" Header="Серийный номер" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Condition}" Header="Состояние" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Serviceman}" Header="Закрепленный военнослужащий" Width="120"/>
+
+            </DataGrid.Columns>
+-->
+        </DataGrid>
         <Button Grid.Column="1" Grid.Row="1" Click="AddPage">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/Add-New.ico"/>
@@ -44,7 +63,7 @@
 
         </Button>
 
-        <Button Grid.Column="2" Grid.Row="1" Click="AddPage">
+        <Button Grid.Column="2" Grid.Row="1" Click="AddPage2">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/Data-Edit.ico"/>
             </Button.Background>
@@ -79,7 +98,7 @@
                 <ImageBrush ImageSource="Resources/Gear-02-WF.ico"/>
             </Button.Background>
         </Button>
-        
+
 
 
     </Grid>

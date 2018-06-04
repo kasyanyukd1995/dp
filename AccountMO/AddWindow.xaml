@@ -41,15 +41,15 @@
                 <StackPanel >
                     <ComboBox Height="20" x:Name="Services" SelectedItem="Services_Selected"></ComboBox>
                     <ComboBox Height="20" x:Name="Instrument"></ComboBox>
-                    <TextBox Height="90"></TextBox>
-                    <TextBox Height="20"></TextBox>
-                    <DatePicker Height="20"></DatePicker>
-                    <DatePicker Height="20"></DatePicker>
-                    <TextBox Height="20"></TextBox>
-                    <TextBox Height="20"></TextBox>
-                    <TextBox Height="20"></TextBox>
-                    <ComboBox Height="20"></ComboBox>
-                    <TextBox Height="90"></TextBox>
+                    <TextBox Height="90" x:Name="Descript"></TextBox>
+                    <TextBox Height="20" x:Name="yearissue"></TextBox>
+                    <DatePicker Height="20" x:Name="DateOn"></DatePicker>
+                    <DatePicker Height="20" x:Name="DateOff"></DatePicker>
+                    <TextBox Height="20" x:Name="decisionOprtn"></TextBox>
+                    <TextBox Height="20" x:Name="serialN"></TextBox>
+                    <TextBox Height="20" x:Name="inventoryN"></TextBox>
+                    <ComboBox Height="20" x:Name="condition"></ComboBox>
+                    <TextBox Height="90" x:Name="AddInf"></TextBox>
                     <TextBox Height="220"></TextBox>
 
                 </StackPanel>
@@ -71,7 +71,16 @@
                        VerticalAlignment="Center">
 
             </TextBlock>
-            <DataGrid Grid.Row="1">
+            <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="assServicemanGrid">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="№ п/п" />
+                    <DataGridTextColumn Binding="{Binding Date_Ass}" Header="Дата постановки на учет" Width="110"/>
+                    <DataGridTextColumn Binding="{Binding Date_UnAss}" Header="Дата снятия с учета" Width="120"/>
+                    <DataGridTextColumn Binding="{Binding Instrument_Id}" Header="№ инструмента" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding Serviceman_Id}" Header="№ военнослужащего" Width="150"/>
+                   
+
+                </DataGrid.Columns>
 
             </DataGrid>
             <StackPanel Orientation="Horizontal" Grid.Row="2">
@@ -91,10 +100,10 @@
                     </Button.Background>
                 </Button>
             </StackPanel>
-            <Button Grid.Row="3" 
+            <Button Grid.Row="3" x:Name="ButtonAdd" 
                     Content="Добавить" 
                     FontSize="20" 
-                    FontWeight="Bold" Margin="295,0,25,10">
+                    FontWeight="Bold" Margin="295,0,25,10" Click="ButtonAdd_Click">
 
             </Button>
 

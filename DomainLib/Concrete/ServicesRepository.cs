@@ -26,6 +26,10 @@ namespace DomainLib.Concrete
         {
             return context.Services.Where(x=>x.NameService==service).First().Instruments;
         }
+        public IQueryable<Service> GetServices (string nameService)
+           {
+            return context.Services.Where(x => x.NameService == nameService);
+           }
 
         public void SaveService(Service service)
         {

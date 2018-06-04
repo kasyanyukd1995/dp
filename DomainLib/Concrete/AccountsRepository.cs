@@ -48,6 +48,7 @@ namespace DomainLib.Concrete
                     dbEntry.SerialNumber = account.SerialNumber;
                     dbEntry.Service = account.Service;
                     dbEntry.Serviceman = account.Serviceman;
+                    
 
                 }
             }

@@ -20,6 +20,10 @@ namespace DomainLib.Concrete
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Serviceman> Servicemans { get; set; }
+        
+      
+    
+       
     }
 
 }

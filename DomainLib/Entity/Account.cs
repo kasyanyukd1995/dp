@@ -8,7 +8,7 @@ namespace DomainLib.Entity
 {
     public class Account
     {
-        public int Id { get; set; }
+        public int Id { get; set; }  //код
         public Service Service { get; set; } //служба
         public Instrument Instrument { get; set; } //тип средства
         public DateTime AccountingDate { get; set; }//дата постановки на учет
@@ -18,9 +18,8 @@ namespace DomainLib.Entity
         public string InventoryNumber { get; set; } //Инвентарный номер
         public string Condition { get; set; } //состояние
         public string AddirionalInf { get; set; } //дополнительная информация
-        public Serviceman Serviceman { get; set; }
-
-   
+        public Srvicemn Srvicemn { get; set; } //военнослужащий
+        
 
     }
 }

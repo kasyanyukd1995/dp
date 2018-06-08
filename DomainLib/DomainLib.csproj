@@ -50,32 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\AccountsRepository.cs" />
-    <Compile Include="Concrete\AssServicemanRepository.cs" />
+    <Compile Include="Concrete\AccountRepository.cs" />
+    <Compile Include="Concrete\AssSrvicemnRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\InstrumentRepository.cs" />
-    <Compile Include="Concrete\ServicemanRepository.cs" />
-    <Compile Include="Concrete\ServicesRepository.cs" />
+    <Compile Include="Concrete\SrvicemnRepository.cs" />
+    <Compile Include="Concrete\ServiceRepository.cs" />
     <Compile Include="Entity\Account.cs" />
-    <Compile Include="Entity\AssServiceman.cs" />
+    <Compile Include="Entity\AssSrvicemn.cs" />
     <Compile Include="Entity\Instrument.cs" />
     <Compile Include="Entity\Service.cs" />
-    <Compile Include="Entity\Serviceman.cs" />
-    <Compile Include="Migrations\201804051801324_MigrateDB.cs" />
-    <Compile Include="Migrations\201804051801324_MigrateDB.Designer.cs">
-      <DependentUpon>201804051801324_MigrateDB.cs</DependentUpon>
+    <Compile Include="Entity\Srvicemn.cs" />
+    <Compile Include="Migrations\201806051724389_MigrationBD.cs" />
+    <Compile Include="Migrations\201806051724389_MigrationBD.Designer.cs">
+      <DependentUpon>201806051724389_MigrationBD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804051916208_rename s.cs" />
-    <Compile Include="Migrations\201804051916208_rename s.Designer.cs">
-      <DependentUpon>201804051916208_rename s.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805152007335_newmirgaton.cs" />
-    <Compile Include="Migrations\201805152007335_newmirgaton.Designer.cs">
-      <DependentUpon>201805152007335_newmirgaton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805152015036_newmirgaton1.cs" />
-    <Compile Include="Migrations\201805152015036_newmirgaton1.Designer.cs">
-      <DependentUpon>201805152015036_newmirgaton1.cs</DependentUpon>
+    <Compile Include="Migrations\201806051821061_MigratR.cs" />
+    <Compile Include="Migrations\201806051821061_MigratR.Designer.cs">
+      <DependentUpon>201806051821061_MigratR.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,17 +77,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804051801324_MigrateDB.resx">
-      <DependentUpon>201804051801324_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806051724389_MigrationBD.resx">
+      <DependentUpon>201806051724389_MigrationBD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804051916208_rename s.resx">
-      <DependentUpon>201804051916208_rename s.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805152007335_newmirgaton.resx">
-      <DependentUpon>201805152007335_newmirgaton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805152015036_newmirgaton1.resx">
-      <DependentUpon>201805152015036_newmirgaton1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806051821061_MigratR.resx">
+      <DependentUpon>201806051821061_MigratR.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ using DomainLib.Entity;
 
 namespace DomainLib.Concrete
 {
-    public class AccountsRepository
+    public class AccountRepository
     {
         private Context context = new Context();
         public IQueryable<Account> Accounts
@@ -17,7 +17,7 @@ namespace DomainLib.Concrete
                 return context.Accounts;
             }
         }
-
+        
         public IEnumerable<string> GetNamesServices() //список служб
         {
             return context.Services.Select(x => x.NameService);
@@ -47,14 +47,13 @@ namespace DomainLib.Concrete
                     dbEntry.InventoryNumber = account.InventoryNumber;
                     dbEntry.SerialNumber = account.SerialNumber;
                     dbEntry.Service = account.Service;
-                    dbEntry.Serviceman = account.Serviceman;
+                    dbEntry.Srvicemn = account.Srvicemn;
                     
-
                 }
             }
             context.SaveChanges();
         }
-
+        
         public Account DeleteAccount(int id)
         {
             var dbEntry = context.Accounts.Find(id);

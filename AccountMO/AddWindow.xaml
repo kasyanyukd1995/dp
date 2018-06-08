@@ -25,7 +25,11 @@
                     <TextBlock FontSize="11" Text="Описание" TextAlignment="Left" Height="90" ></TextBlock>
                     <TextBlock FontSize="11" Text="Год выпуска" TextAlignment="Left" Height="20" ></TextBlock>
                     <TextBlock FontSize="11" Text="Дата постановки на учет" TextAlignment="Left" Height="20" ></TextBlock>
-                    <TextBlock FontSize="11" Text="Дата снятия с учета" TextAlignment="Left" Height="20"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="11" Text="Дата снятия с учета" TextAlignment="Left" Height="20" Width="190"></TextBlock>
+                        <RadioButton HorizontalAlignment="Left" x:Name="radioButton" Checked="radioButton_Checked"  ></RadioButton>
+                    </StackPanel>
+                    
                     <TextBlock FontSize="11" Text="Решение на эксплуатацию" TextAlignment="Left" Height="20" ></TextBlock>
                     <TextBlock FontSize="11" Text="Серийный номер" TextAlignment="Left" Height="20" ></TextBlock>
                     <TextBlock FontSize="11" Text="Инвентарный номер" TextAlignment="Left" Height="20" ></TextBlock>
@@ -39,18 +43,18 @@
             </Grid>
             <Grid Grid.Column="1">
                 <StackPanel >
-                    <ComboBox Height="20" x:Name="Services" SelectedItem="Services_Selected"></ComboBox>
-                    <ComboBox Height="20" x:Name="Instrument"></ComboBox>
+                    <ComboBox Height="20" x:Name="Services" SelectionChanged="Services_Selected"></ComboBox>
+                    <ComboBox Height="20" x:Name="Instrument" SelectionChanged="Instrument_Selection"></ComboBox>
                     <TextBox Height="90" x:Name="Descript"></TextBox>
                     <TextBox Height="20" x:Name="yearissue"></TextBox>
-                    <DatePicker Height="20" x:Name="DateOn"></DatePicker>
-                    <DatePicker Height="20" x:Name="DateOff"></DatePicker>
+                    <DatePicker  Height="20" x:Name="DateOn"></DatePicker>
+                    <DatePicker  Visibility="Hidden" Height="20" x:Name="DateOff"></DatePicker>
                     <TextBox Height="20" x:Name="decisionOprtn"></TextBox>
                     <TextBox Height="20" x:Name="serialN"></TextBox>
-                    <TextBox Height="20" x:Name="inventoryN"></TextBox>
-                    <ComboBox Height="20" x:Name="condition"></ComboBox>
+                    <TextBox Height="20" x:Name="inventoryN" TextChanged="inventoryN_TextChanged"></TextBox>
+                    <TextBox Height="20" x:Name="condition"></TextBox>
                     <TextBox Height="90" x:Name="AddInf"></TextBox>
-                    <TextBox Height="220"></TextBox>
+                    <TextBox Height="220" x:Name="characteristic"></TextBox>
 
                 </StackPanel>
 
@@ -76,8 +80,8 @@
                     <DataGridTextColumn Binding="{Binding Id}" Header="№ п/п" />
                     <DataGridTextColumn Binding="{Binding Date_Ass}" Header="Дата постановки на учет" Width="110"/>
                     <DataGridTextColumn Binding="{Binding Date_UnAss}" Header="Дата снятия с учета" Width="120"/>
-                    <DataGridTextColumn Binding="{Binding Instrument_Id}" Header="№ инструмента" Width="170"/>
-                    <DataGridTextColumn Binding="{Binding Serviceman_Id}" Header="№ военнослужащего" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Instrument_Id}" Header="Тип средства" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding Serviceman_Id}" Header="Военнослужащий" Width="150"/>
                    
 
                 </DataGrid.Columns>

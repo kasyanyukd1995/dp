@@ -12,17 +12,17 @@
             <ColumnDefinition Width="45*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock Height="18" Text="Военнослужащий"/>
-            <TextBlock Height="18" Text="Дата закрепления"></TextBlock>
-            <TextBlock Height="18" Text="Дата открепления"></TextBlock>
+            <TextBlock Height="25" Text="Военнослужащий"/>
+            <TextBlock Height="25" Text="Дата закрепления"></TextBlock>
+            <TextBlock Height="25" Text="Дата открепления"></TextBlock>
             <TextBlock Height="61" ><Run Text="Дополнительная"/><Run/><LineBreak/><Run Text="информация"/></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <ComboBox Height="18"></ComboBox>
-            <DatePicker Width="90" HorizontalAlignment="Left" Height="18"></DatePicker>
-            <DatePicker Width="90" HorizontalAlignment="Left" Height="18"></DatePicker>
-            <TextBox  Height="58"></TextBox>
-            <Button Height="38" Margin="106,5,130,10">
+            <ComboBox Height="25" x:Name="comboBoxServicemen"></ComboBox>
+            <DatePicker Width="90" x:Name="DP1" HorizontalAlignment="Left" Height="25"></DatePicker>
+            <DatePicker Width="90" x:Name="DP2" HorizontalAlignment="Left" Height="25"></DatePicker>
+            <TextBox  Height="40"></TextBox>
+            <Button x:Name="SaveButton" Height="38" Margin="106,5,130,10" Click="SaveButton_Click_1">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Save-01.ico"/>
                 </Button.Background>

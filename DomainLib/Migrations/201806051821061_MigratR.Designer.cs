@@ -7,13 +7,13 @@ namespace DomainLib.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class renames : IMigrationMetadata
+    public sealed partial class MigratR : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(renames));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigratR));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804051916208_rename s"; }
+            get { return "201806051821061_MigratR"; }
         }
         
         string IMigrationMetadata.Source

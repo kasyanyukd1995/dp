@@ -10,6 +10,7 @@ namespace DomainLib.Concrete
    public class InstrumentRepository
     {
         private Context context = new Context();
+        ServiceRepository servicesRepository = new ServiceRepository ();
         public IQueryable<Instrument> Instruments
         {
             get
@@ -17,9 +18,23 @@ namespace DomainLib.Concrete
                 return context.Instruments;
             }
         }
-        public IQueryable<string> GetNameInstruments(string nameService)
+        public IQueryable<string> GetNameInstruments(string nameService, int Index)
         {
-            return context.Instruments.Where(x => x.Service.NameService == nameService).Select(x=>x.NameInstrument);
+            return context.Instruments.Where(x => x.Service.Id == Index ).Select(x=>x.NameInstrument);
+        }
+
+        public string GetYearissue(string nameInstrument)
+        {
+
+            return Instruments.FirstOrDefault(x => x.NameInstrument == nameInstrument).YearIssue;
+        }
+        public string GetDescript(string nameInstrument)
+        {
+            return Instruments.FirstOrDefault(x => x.NameInstrument == nameInstrument).Description;
+        }
+        public string GetCharacteristic(string nameInstrument)
+        {
+            return Instruments.FirstOrDefault(x => x.NameInstrument == nameInstrument).Characteristic;
         }
 
         public IEnumerable<string> GetNamesServices() //список служб
@@ -30,7 +45,10 @@ namespace DomainLib.Concrete
         {
             return context.Services.Where(x => x.NameService == service).First().Instruments;
         }
-
+        public int GetInstrumentId (string nameInstrument)
+        {
+            return context.Instruments.FirstOrDefault(x => x.NameInstrument == nameInstrument).Id;
+        }
         public void SaveInstrument(Instrument instrument)
         {
             if (instrument.Id == 0)

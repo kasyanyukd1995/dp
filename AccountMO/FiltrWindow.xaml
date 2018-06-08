@@ -10,17 +10,17 @@
         <StackPanel Orientation="Vertical" Margin="0">
             <TextBlock Text="Показать" Margin="21,0,0,0" Height="20"></TextBlock>
             <StackPanel Orientation="Horizontal" Height="20">
-                <RadioButton Content="все" Width="70"></RadioButton>
-                <RadioButton Content="состоящие на учете" Width="155"></RadioButton>
-                <RadioButton Content="снятые с учета"></RadioButton>
+                <RadioButton x:Name="allradbut" Content="все" Width="70" Checked="allradbut_Checked"></RadioButton>
+                <RadioButton x:Name="accountradbat" Content="состоящие на учете" Width="155" Checked="accountradbat_Checked"></RadioButton>
+                <RadioButton x:Name="unaccountradbat" Content="снятые с учета" Checked="unaccountradbat_Checked"></RadioButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Служба:" Width="79"></TextBlock>
-                <ComboBox Width="307"></ComboBox>
+                <ComboBox x:Name="ServiceCB" Width="307" SelectionChanged="ServiceCB_SelectionChanged"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Тип средства:" Width="79"></TextBlock>
-                <ComboBox Width="307"></ComboBox>
+                <ComboBox x:Name="InstrumentCB" Width="307"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Дата постановки на учет: с" Width="151"></TextBlock>
@@ -28,11 +28,12 @@
                 <TextBlock Text="   по" Width="32"  HorizontalAlignment="Center"/>
                 <DatePicker Width="101"></DatePicker>
             </StackPanel>
-            <Button Height="31" HorizontalAlignment="Center" Margin="210,10,178,10" Width="36">
+            <Button Height="31" HorizontalAlignment="Center" Margin="210,10,178,10" Width="36" Click="Button_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Resources/Filter - 03.ico"/>
                 </Button.Background>
             </Button>
+            
 
 
 

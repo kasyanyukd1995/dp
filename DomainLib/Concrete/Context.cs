@@ -11,15 +11,15 @@ namespace DomainLib.Concrete
 {
     public class Context : DbContext
     {
-        public Context() : base("DefaultConnection")
+        public Context() : base("DefaultConnectionT")
         {
 
         }
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<AssServiceman> AssServicemans { get; set; }
+        public DbSet<AssSrvicemn> AssSrvicmns { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<Serviceman> Servicemans { get; set; }
+        public DbSet<Srvicemn> Srvicemns { get; set; }
         
       
     

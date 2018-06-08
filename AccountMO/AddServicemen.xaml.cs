@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DomainLib.Concrete;
 
 namespace AccountMO
 {
@@ -19,9 +20,23 @@ namespace AccountMO
     /// </summary>
     public partial class AddServicemen : Window
     {
+        SrvicemnRepository srvicemnRepository = new SrvicemnRepository();
+        public int temp;
         public AddServicemen()
         {
             InitializeComponent();
+            List<string> servicmens = srvicemnRepository.GetNamesServicemen().ToList();
+            comboBoxServicemen.ItemsSource = servicmens;
+            
+            
+        }
+        
+        private void SaveButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            temp = srvicemnRepository.GetServicemen(comboBoxServicemen.Text);
+            Singleton.getInstance().IdServicemen = temp;
+            Close();
         }
     }
 }

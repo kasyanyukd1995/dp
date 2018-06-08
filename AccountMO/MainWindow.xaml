@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AccountMO"
         xmlns:Concrete="clr-namespace:DomainLib.Concrete;assembly=DomainLib" x:Class="AccountMO.MainWindow"
         mc:Ignorable="d"
-        Title="Учет материальных средств" FontFamily="Arial" FontSize="14" Width="954" Height="601.5">
+        Title="Учет материальных средств" FontFamily="Arial" FontSize="14" Width="954" Height="601.5" Loaded="Window_Loaded">
 
 
 
@@ -37,8 +37,8 @@
             <RowDefinition Height="473*"/>
             <RowDefinition Height="54*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="2" Grid.ColumnSpan="10"  x:Name="dataGridAccount" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" UseLayoutRounding="True" Margin="-3,0,10,0">
-            <!-- столбцы
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="10" AutoGenerateColumns="False"  x:Name="dataGridAccount" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" UseLayoutRounding="True" Margin="-3,10,10,44" Grid.RowSpan="2" CurrentCellChanged="dataGridAccount_CurrentCellChanged" SelectionChanged="dataGridAccount_SelectionChanged">
+            <!-- столбцы-->
             
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="№ п/п" Width="100"/>
@@ -51,10 +51,10 @@
                 <DataGridTextColumn Binding="{Binding InventoryNumber}" Header="Инвентарный номер" Width="120"/>
                 <DataGridTextColumn Binding="{Binding SerialNumber}" Header="Серийный номер" Width="120"/>
                 <DataGridTextColumn Binding="{Binding Condition}" Header="Состояние" Width="120"/>
-                <DataGridTextColumn Binding="{Binding Serviceman}" Header="Закрепленный военнослужащий" Width="120"/>
+                <DataGridTextColumn Binding="{Binding SN}" Header="Закрепленный военнослужащий" Width="120"/>
 
             </DataGrid.Columns>
--->
+
         </DataGrid>
         <Button Grid.Column="1" Grid.Row="1" Click="AddPage">
             <Button.Background>
@@ -68,12 +68,12 @@
                 <ImageBrush ImageSource="Resources/Data-Edit.ico"/>
             </Button.Background>
         </Button>
-        <Button Grid.Column="3" Grid.Row="1" >
+        <Button  x:Name="Delete_button" Grid.Column="3" Grid.Row="1" Click="Delete_button_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="Resources/Delete.ico"/>
             </Button.Background>
         </Button>
-        <Button Grid.Column="4" Grid.Row="1" >
+        <Button x:Name="Update_button" Grid.Column="4" Grid.Row="1" Click="Update_button_Click_1" >
             <Button.Background>
                 <ImageBrush ImageSource="Resources/Command-Refresh.ico"/>
             </Button.Background>

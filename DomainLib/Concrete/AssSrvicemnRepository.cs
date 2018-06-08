@@ -1,22 +1,23 @@
-﻿using DomainLib.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DomainLib.Entity;
 
 namespace DomainLib.Concrete
 {
-    public class ServicemanRepository
+    public class AssSrvicemnRepository
     {
         private Context context = new Context();
-        public IQueryable<Serviceman> Servicemans
+        public IQueryable<AssSrvicemn> AssServicemens
         {
             get
             {
-                return context.Servicemans;
+                return context.AssSrvicmns;
             }
         }
+
         public IEnumerable<string> GetNamesServices() //список служб
         {
             return context.Services.Select(x => x.NameService);
@@ -26,32 +27,34 @@ namespace DomainLib.Concrete
             return context.Services.Where(x => x.NameService == service).First().Instruments;
         }
 
-        public void SavServiceman(Serviceman serviceman)
+        public void SaveAssServiceman(AssSrvicemn assServiceman)
         {
-            if (serviceman.Id == 0)
+            if (assServiceman.Id == 0)
             {
-                context.Servicemans.Add(serviceman);
+                context.AssSrvicmns.Add(assServiceman);
+                
             }
             else
             {
-                var dbEntry = context.Servicemans.Find(serviceman.Id);
+                var dbEntry = context.AssSrvicmns.Find(assServiceman.Id);
                 if (dbEntry != null)
                 {
-                    dbEntry.Instruments = serviceman.Instruments;
-                    dbEntry.Name = serviceman.Name;
-                    dbEntry.Status = serviceman.Status;
-                    dbEntry.Surname = serviceman.Surname;
+                    dbEntry.Date_Ass = assServiceman.Date_Ass;
+                    dbEntry.Date_UnAss = assServiceman.Date_UnAss;
+                    dbEntry.Instrument = assServiceman.Instrument;
+                    dbEntry.Srvicemn = assServiceman.Srvicemn;
+
                 }
             }
             context.SaveChanges();
         }
 
-        public Serviceman DeleteServiceman(int id)
+        public AssSrvicemn DeleteAssServiceman(int id)
         {
-            var dbEntry = context.Servicemans.Find(id);
+            var dbEntry = context.AssSrvicmns.Find(id);
             if (dbEntry != null)
             {
-                context.Servicemans.Remove(dbEntry);
+                context.AssSrvicmns.Remove(dbEntry);
                 context.SaveChanges();
             }
             return dbEntry;

@@ -7,13 +7,13 @@ namespace DomainLib.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class newmirgaton1 : IMigrationMetadata
+    public sealed partial class MigrationBD : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newmirgaton1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationBD));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805152015036_newmirgaton1"; }
+            get { return "201806051724389_MigrationBD"; }
         }
         
         string IMigrationMetadata.Source

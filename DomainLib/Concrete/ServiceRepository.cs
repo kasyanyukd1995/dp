@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using DomainLib.Entity;
 
 
+
 namespace DomainLib.Concrete
 {
-    public class ServicesRepository
+
+    public class ServiceRepository
     {
         private Context context = new Context();
         public IQueryable<Service> Services
@@ -31,6 +33,10 @@ namespace DomainLib.Concrete
             return context.Services.Where(x => x.NameService == nameService);
            }
 
+        public int GetServiceId(string nameService)
+        {
+            return context.Services.FirstOrDefault(x => x.NameService == nameService).Id;
+        }
         public void SaveService(Service service)
         {
             if(service.Id==0)
